@@ -1,3 +1,3 @@
-BEGIN_TF_DOCS
-
-END_TF_DOCS
+<!-- BEGIN_TF_DOCS -->
+{{ .Content }}
+<!-- END_TF_DOCS -->
