@@ -1,4 +1,26 @@
 # Usage
+
+```
+module "kyverno" {
+
+  source = "git::https://github.com/DNXLabs/terraform-aws-eks-kyverno.git"
+
+  enabled = true
+  ui_enabled = true
+
+    policy_reporter_settings = {
+
+        target = {
+            slack = {
+                "webhook" = "https://hooks.slack.com/services/TH..."
+                "minimumPriority" = "medium"
+                "sources" = "kyverno"
+            }
+        }
+    }    
+}
+```
+
 <!--- BEGIN_TF_DOCS --->
 
 ## Requirements
