@@ -3,7 +3,7 @@
 ```
 module "kyverno" {
 
-  source = "git::https://github.com/DNXLabs/terraform-aws-eks-kyverno.git"
+  source = "DNXLabs/eks-kyverno/aws"
 
   enabled = true
   ui_enabled = true
@@ -13,7 +13,7 @@ module "kyverno" {
         target = {
             slack = {
                 "webhook" = "https://hooks.slack.com/services/TH..."
-                "minimumPriority" = "medium"
+                "minimumPriority" = "warning"
                 "sources" = "kyverno"
             }
         }
