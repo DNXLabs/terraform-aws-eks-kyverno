@@ -3,7 +3,7 @@
 ```
 module "kyverno" {
 
-  source = "git::https://github.com/DNXLabs/terraform-aws-eks-kyverno.git"
+  source = "DNXLabs/eks-kyverno/aws"
 
   enabled = true
   ui_enabled = true
@@ -13,7 +13,7 @@ module "kyverno" {
         target = {
             slack = {
                 "webhook" = "https://hooks.slack.com/services/TH..."
-                "minimumPriority" = "medium"
+                "minimumPriority" = "warning"
                 "sources" = "kyverno"
             }
         }
@@ -29,14 +29,14 @@ module "kyverno" {
 |------|---------|
 | terraform | >= 0.13 |
 | aws | >= 3.13 |
-| helm | >= 2.5.1 |
+| helm | >= 1.3.2 |
 | kubernetes | >= 1.10.0, < 3.0.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| helm | >= 2.5.1 |
+| helm | >= 1.3.2 |
 | kubernetes | >= 1.10.0, < 3.0.0 |
 
 ## Inputs
