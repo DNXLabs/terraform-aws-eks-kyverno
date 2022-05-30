@@ -7,6 +7,12 @@ resource "helm_release" "kyverno" {
   # version    = var.kyverno_helm_chart_version
   namespace = var.kyverno_namespace
 
+  set {
+    name  = "replicaCount"
+    value = 3
+  }
+
+
   values = [
     yamlencode(var.kyverno_settings)
   ]
