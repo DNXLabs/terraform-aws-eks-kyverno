@@ -45,15 +45,18 @@ module "kyverno" {
 |------|-------------|------|---------|:--------:|
 | create\_namespace | Whether to create Kubernetes namespace with name defined by `namespace`. | `bool` | `true` | no |
 | enabled | Enable installation of core Kyverno | `bool` | `false` | no |
+| kyverno\_extraargs | Secrets to allow accessing private repositories | `any` | `{}` | no |
 | kyverno\_helm\_chart\_name | Kyverno Helm chart name to be installed | `string` | `"kyverno"` | no |
 | kyverno\_helm\_chart\_release\_name | Kyverno Helm chart release name to be installed | `string` | `"kyverno"` | no |
 | kyverno\_helm\_chart\_repo | Kyverno repository name. | `string` | `"https://kyverno.github.io/kyverno"` | no |
+| kyverno\_helm\_chart\_version | Kyverno Helm chart version | `string` | n/a | yes |
 | kyverno\_namespace | Namespace for kyverno helm chart | `string` | `"kyverno"` | no |
 | kyverno\_settings | Additional settings which will be passed to the Helm chart values, see https://kyverno.io/docs/installation/#install-kyverno-using-helm. | `any` | `{}` | no |
 | mod\_dependency | Dependence variable binds all AWS resources allocated by this module, dependent modules reference this variable. | `any` | `null` | no |
 | policy\_reporter\_helm\_chart\_name | Policy Reporter Helm chart name to be installed | `string` | `"policy-reporter"` | no |
 | policy\_reporter\_helm\_chart\_release\_name | Policy Reporter Helm chart release name to be installed | `string` | `"policy-reporter"` | no |
 | policy\_reporter\_helm\_chart\_repo | Policy Reporter repository name. | `string` | `"https://kyverno.github.io/policy-reporter"` | no |
+| policy\_reporter\_helm\_chart\_version | Policy Reporter Helm chart version | `string` | `"2.8.0"` | no |
 | policy\_reporter\_namespace | Namespace for Policy Reporter helm chart | `string` | `"policy-reporter"` | no |
 | policy\_reporter\_settings | Additional settings which will be passed to the Helm chart values, see https://kyverno.io/docs/installation/#install-kyverno-using-helm. | `any` | `{}` | no |
 | slack\_enabled | Enables Slack integration | `bool` | `false` | no |
@@ -61,6 +64,8 @@ module "kyverno" {
 
 ## Outputs
 
-No output.
+| Name | Description |
+|------|-------------|
+| kyverno\_namespace | Namespace for Kyverno installation. |
 
 <!--- END_TF_DOCS --->
