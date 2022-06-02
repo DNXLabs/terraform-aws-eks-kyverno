@@ -53,16 +53,16 @@ variable "policy_reporter_helm_chart_repo" {
   description = "Policy Reporter repository name."
 }
 
-# variable "kyverno_helm_chart_version" {
-#   type        = string
-#   description = "Kyverno Helm chart version"
-# }
+variable "kyverno_helm_chart_version" {
+  type        = string
+  description = "Kyverno Helm chart version"
+}
 
-# variable "policy_reporter_helm_chart_version" {
-#   type        = string
-#   default     = "2.8.0"
-#   description = "Policy Reporter Helm chart version"
-# }
+variable "policy_reporter_helm_chart_version" {
+  type        = string
+  default     = "2.8.0"
+  description = "Policy Reporter Helm chart version"
+}
 
 variable "mod_dependency" {
   type        = any
@@ -100,4 +100,11 @@ variable "create_namespace" {
   type        = bool
   default     = true
   description = "Whether to create Kubernetes namespace with name defined by `namespace`."
+}
+
+variable "kyverno_extraargs" {
+  type        = any
+  default     = {}
+  description = "Secrets to allow accessing private repositories "
+
 }
