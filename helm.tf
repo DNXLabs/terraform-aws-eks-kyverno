@@ -4,7 +4,7 @@ resource "helm_release" "kyverno" {
   name       = var.kyverno_helm_chart_name
   chart      = var.kyverno_helm_chart_release_name
   repository = var.kyverno_helm_chart_repo
-  # version    = var.kyverno_helm_chart_version
+  version    = var.kyverno_helm_chart_version
   namespace = var.kyverno_namespace
 
   set {
@@ -14,7 +14,7 @@ resource "helm_release" "kyverno" {
 
   set {
 
-    name = "extraArgs"
+    name  = "extraArgs"
     value = "{${join(",", var.kyverno_extraargs)}}"
 
   }
