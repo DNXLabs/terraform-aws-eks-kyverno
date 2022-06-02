@@ -12,6 +12,12 @@ resource "helm_release" "kyverno" {
     value = 3
   }
 
+  set {
+
+    name = "extraArgs"
+    value = "{${join(",", var.kyverno_extraargs)}}"
+
+  }
 
   values = [
     yamlencode(var.kyverno_settings)
