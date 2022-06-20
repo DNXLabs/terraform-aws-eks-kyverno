@@ -30,7 +30,7 @@ resource "helm_release" "kyverno_ui" {
   name       = var.policy_reporter_helm_chart_name
   chart      = var.policy_reporter_helm_chart_release_name
   repository = var.policy_reporter_helm_chart_repo
-  # version    = var.policy_reporter_helm_chart_version
+  version    = var.policy_reporter_helm_chart_version
   namespace = var.policy_reporter_namespace
 
   set {
