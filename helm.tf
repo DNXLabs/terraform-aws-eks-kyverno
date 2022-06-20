@@ -5,7 +5,7 @@ resource "helm_release" "kyverno" {
   chart      = var.kyverno_helm_chart_release_name
   repository = var.kyverno_helm_chart_repo
   version    = var.kyverno_helm_chart_version
-  namespace = var.kyverno_namespace
+  namespace  = var.kyverno_namespace
 
   set {
     name  = "replicaCount"
@@ -31,7 +31,7 @@ resource "helm_release" "kyverno_ui" {
   chart      = var.policy_reporter_helm_chart_release_name
   repository = var.policy_reporter_helm_chart_repo
   version    = var.policy_reporter_helm_chart_version
-  namespace = var.policy_reporter_namespace
+  namespace  = var.policy_reporter_namespace
 
   set {
     name  = "ui.enabled"
